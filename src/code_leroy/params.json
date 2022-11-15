@@ -1,0 +1,26 @@
+{
+	"image_shape": [512, 512, 1],
+	"patch_shape": [512, 512, 1],
+	"data_path": "/mnt/localscratch/maastro/Ralph/bodycomposition/data_mega.h5",
+	"patch_path": "training_samples",
+	"val_patch_path": "validation_samples",
+	"split": 20,
+	"number_of_patches": 15,
+	"number_of_augmentations": 3,
+	"switch_views": "False",
+	"translate": "False",
+
+	"min_bound": -500,
+	"max_bound": 500,
+	"num_classes": 4,
+	"batch_size": 1,
+	"num_steps": 15000,
+	"train_eval_step": 25,
+	"val_eval_step": 100,
+	"save_model_step": 5000,
+
+	"learning_rate": 0.001,
+	"dropout_rate": 0.05,
+	"l2_loss": 0.001
+
+}
