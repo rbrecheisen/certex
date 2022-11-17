@@ -6,3 +6,4 @@ pyopengl
 tensorflow
 tensorflow-datasets
 matplotlib
+pillow
