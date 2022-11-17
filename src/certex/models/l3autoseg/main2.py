@@ -5,9 +5,12 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from PIL import ImageOps
 
-IMG_DIR = '/Users/Ralph/Desktop/images'
-LAB_DIR = '/Users/Ralph/Desktop/annotations/trimaps'
-MOD_DIR = '/Users/Ralph/Desktop/model'
+# IMG_DIR = '/Users/Ralph/Desktop/images'
+# LAB_DIR = '/Users/Ralph/Desktop/annotations/trimaps'
+# MOD_DIR = '/Users/Ralph/Desktop/model'
+IMG_DIR = '/home/local/UNIMAAS/r.brecheisen/data/raw/OxfordPets/images'
+LAB_DIR = '/home/local/UNIMAAS/r.brecheisen/data/raw/OxfordPets/annotations/trimaps'
+MOD_DIR = '/home/local/UNIMAAS/r.brecheisen/certex-models'
 IMG_SIZE = (160, 160)
 NUM_CLASSES = 3
 BATCH_SIZE = 32
