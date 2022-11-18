@@ -46,6 +46,14 @@ def main():
 #     accuracy                           0.67      4042
 #    macro avg       0.60      0.44      0.47      4042
 # weighted avg       0.66      0.67      0.65      4042
+#
+# Comments:
+# ---------
+# Precision, also called Positive Predictive Value, is the fraction of relevant instances
+# among the retrieved instances. Recall, also called sensitivity, is the fraction of
+# relevant instances retrieved in total. Both are measures of relevance.
+# F1-score is a combination of precision and recall in a single number.
+# Support is the number of occurences of each class in y_true
 
 
 if __name__ == '__main__':
