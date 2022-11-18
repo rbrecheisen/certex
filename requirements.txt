@@ -7,3 +7,5 @@ tensorflow
 tensorflow-datasets
 matplotlib
 pillow
+opencv-python
+scikit-learn
