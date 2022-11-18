@@ -109,9 +109,7 @@ def load_training_and_validation_data():
 
 def display_mask(prediction):
     mask = np.argmax(prediction, axis=1)
-    print(mask.shape)
     mask = np.expand_dims(mask, axis=1)
-    print(f'after expansion: {mask.shape}')
     mask = ImageOps.autocontrast(tf.keras.preprocessing.image.array_to_img(mask))
     plt.figure(figsize=(15, 15))
     # plt.subplot(1, 2, 1)
