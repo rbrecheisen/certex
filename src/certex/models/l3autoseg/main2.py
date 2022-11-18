@@ -119,7 +119,7 @@ def display_mask(prediction):
     plt.title('Predicted mask')
     plt.imshow(mask)
     plt.axis('off')
-    plt.show()
+    plt.savefig('figure.png')
 
 
 # curl -O https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz
