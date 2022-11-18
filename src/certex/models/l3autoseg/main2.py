@@ -144,8 +144,9 @@ def main():
 def validate():
     _, _, validation_img_paths, validation_lab_paths = load_training_and_validation_data()
     validation_data = OxfordPets(BATCH_SIZE, IMG_SIZE, validation_img_paths, validation_lab_paths)
-    model = tf.keras.models.load_model(MOD_DIR)
+    model = tf.keras.models.load_model(MOD_DIR, compile=False)
     validation_predictions = model.predict(validation_data)
+    print(validation_predictions)
     display_mask(validation_predictions[10])
 
 
