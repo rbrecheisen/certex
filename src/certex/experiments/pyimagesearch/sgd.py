@@ -7,6 +7,7 @@ from sklearn.datasets import make_blobs
 
 EPOCHS = 100
 ALPHA = 0.01
+BATCH_SIZE = 32
 
 
 def sigmoid_activation(x):
@@ -24,6 +25,11 @@ def predict(X, W):
     return predictions
 
 
+def next_batch(X, y, batch_size):
+    for i in np.arange(0, X.shape[0], batch_size):
+        yield X[i:i+batch_size], y[i:i+batch_size]
+
+
 def main():
     X, y = make_blobs(n_samples=1000, n_features=2, centers=2, cluster_std=1.5, random_state=1)
     y = y.reshape((y.shape[0], 1))
@@ -33,13 +39,16 @@ def main():
     W = np.random.randn(X.shape[1], 1)
     losses = []
     for epoch in np.arange(0, EPOCHS):
-        predictions = sigmoid_activation(train_x.dot(W))
-        error = predictions - train_y
-        loss = np.sum(error ** 2)
+        epoch_loss = []
+        for batch_x, batch_y in next_batch(train_x, train_y, BATCH_SIZE):
+            predictions = sigmoid_activation(batch_x.dot(W))
+            error = predictions - batch_y
+            epoch_loss.append(np.sum(error ** 2))
+            d = error * sigmoid_deriv(predictions)
+            gradient = batch_x.T.dot(d)
+            W += -ALPHA * gradient
+        loss = np.average(epoch_loss)
         losses.append(loss)
-        d = error * sigmoid_deriv(predictions)
-        gradient = train_x.T.dot(d)
-        W += -ALPHA * gradient
         if epoch == 0 or (epoch + 1) % 5 == 0:
             print('[INFO] epoch={}, loss={:.7f}'.format(int(epoch+1), loss))
     print('[INFO] evaluating...')
