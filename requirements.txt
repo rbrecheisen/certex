@@ -4,8 +4,8 @@ pandas
 pyside6
 pyopengl
 tensorflow
-tensorflow-datasets
 matplotlib
 pillow
 opencv-python
 scikit-learn
+pyinstaller
