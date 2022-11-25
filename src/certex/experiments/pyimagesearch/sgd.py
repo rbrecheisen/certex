@@ -33,7 +33,7 @@ def next_batch(X, y, batch_size):
 def main():
     X, y = make_blobs(n_samples=1000, n_features=2, centers=2, cluster_std=1.5, random_state=1)
     y = y.reshape((y.shape[0], 1))
-    X = np.c_[X, np.ones(X.shape[0])]
+    X = np.c_[X, np.ones((X.shape[0]))]
     train_x, test_x, train_y, test_y = train_test_split(X, y, test_size=0.5, random_state=4)
     print('[INFO] training...')
     W = np.random.randn(X.shape[1], 1)
